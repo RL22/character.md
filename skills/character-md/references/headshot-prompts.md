@@ -55,11 +55,11 @@ Photorealistic, consistent identity, natural skin texture, not a stock photo.
 
 Wearing dark minimal layers, smart casual, no visible logos.
 
-Cinematic portrait, subject off-center, calm and thoughtful expression.
+Cinematic portrait, calm and thoughtful expression, face still large and clearly recognizable.
 
-35mm lens, f/1.8, slight low angle, rule-of-thirds composition.
+70mm lens, f/2.8, eye-level or very slight low angle, subtle rule-of-thirds composition.
 
-Directional key light from side, subtle rim light, deeper shadows, high contrast, moody but realistic.
+Directional key light from side, subtle rim light, controlled contrast, moody but realistic, no heavy shadows across identity-critical facial features.
 
-Photorealistic, consistent identity, natural skin texture, no stylization.
+Photorealistic, consistent identity, natural skin texture, no stylization, no face widening, no heavier jaw, no recasting.
 ```

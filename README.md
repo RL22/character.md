@@ -1,109 +1,71 @@
 # Character.md
 
-A free, open-source starter system for creating consistent photorealistic AI characters with GPT-5 Image 2 and other image generation tools.
+A cross-agent skill kit for creating consistent photorealistic AI characters.
 
-Character.md helps you define a repeatable **Character DNA** file so your AI-generated images keep the same identity across headshots, lifestyle scenes, workspace photos, podcast visuals, and campaign content.
+Character.md helps an agent turn uploaded reference images into a reusable character identity, approve an anchor headshot, approve a multi-angle identity sheet, and then generate either a professional headshot or a 4-tile lifestyle image with less character drift.
 
-> Lock the face. Free the world.
+The core package lives here:
 
-## What this repo helps you do
+```txt
+skills/character-md/
+```
 
-- Create consistent AI portraits that actually look like the same person
-- Reduce identity drift across image batches
-- Move beyond generic stock-photo aesthetics
-- Build reusable prompts for headshots and lifestyle photography
-- Use a simple consistency loop: **Generate → Check → Refine**
+## Use It
 
-## Who this is for
+If your agent supports skills, invoke:
 
-- Founders and solopreneurs
-- Vibe marketers and creative operators
-- Personal brand builders
-- Creators and podcasters
-- Marketing teams testing AI-generated visuals
-- Anyone who wants a repeatable character system instead of one-off prompts
+```txt
+/character create
+```
 
-## Repo contents
+The skill can also handle:
+
+```txt
+/character map-face
+/character anchor
+/character sheet
+/character headshot
+/character lifestyle
+/character diagnose
+```
+
+For manual use, start with `skills/character-md/references/getting-started.md`.
+
+## Source Of Truth
+
+- Uploaded reference images are the original identity truth.
+- The approved anchor headshot is the quality anchor.
+- The approved identity sheet is the visual source of truth.
+- `character.md` is the reusable text source of truth.
+- Style references affect wardrobe, color, texture, and vibe only.
+
+## Repo Layout
 
 ```txt
 character-md/
 ├── README.md
-├── LICENSE
-├── install.md
+├── AGENTS.md
+├── CLAUDE.md
 ├── character.md
 ├── CONTRIBUTING.md
-│
-├── prompts/
-│   ├── starter-prompts.md
-│   ├── headshot-prompts.md
-│   ├── lifestyle-prompts.md
-│   └── face-lock-snippet.md
-│
-├── validation/
-│   ├── simple-checklist.md
-│   ├── scoring-rubric.md
-│   ├── drift-diagnostics.md
-│   └── test-prompts.md
-│
-├── examples/
-│   ├── prompt-assembly.md
-│   └── image-progression.md
-│
-└── landing-page/
-    ├── index.html
-    └── assets/
+├── LICENSE
+└── skills/
+    └── character-md/
+        ├── SKILL.md
+        ├── agents/
+        │   └── openai.yaml
+        ├── assets/
+        └── references/
 ```
 
-## Quick start
+## Agent Compatibility
 
-1. Open `install.md`.
-2. Add 3–5 reference images.
-3. Fill out `character.md` with your strict identity details.
-4. Use `prompts/starter-prompts.md` to generate your first baseline headshot.
-5. Use the quick consistency checklist to decide what to keep, refine, or regenerate.
+- Codex uses `skills/character-md/SKILL.md`.
+- OpenCode and other compatible agents use `AGENTS.md`.
+- Claude Code uses `CLAUDE.md`, which imports `AGENTS.md`.
 
-## The core idea
-
-Most AI image prompts are too loose. They describe the scene, but they let the model reinterpret the person.
-
-Character.md separates the prompt into reusable layers:
-
-```txt
-Character DNA + Outfit + Environment + Camera + Lighting + Constraints
-```
-
-The **Character DNA** stays strict. The outfit, environment, camera, and lighting can change.
-
-## Face Lock snippet
-
-Use this in any prompt where identity consistency matters:
-
-```txt
-must maintain identical facial structure, same person across all images,
-no variation in bone structure, no reinterpretation,
-consistent face shape, jawline, eyes, and proportions
-```
-
-## Simple consistency loop
-
-You do not need a complicated workflow to get better results.
-
-```txt
-Generate → Check → Refine
-```
-
-After every batch, ask:
-
-- Does the face still look like the same person?
-- Are the hairline, beard, and skin texture consistent?
-- Does the image feel like the intended person, not a generic stock model?
-
-If not, tighten `character.md` and regenerate.
+This repo is intentionally skill-first, not plugin-first. There are no local scripts, Python dependencies, landmark detection models, MediaPipe setup, or OpenCV setup in v1.
 
 ## License
 
-MIT. Use it, fork it, remix it, and build with it.
-
-## Support the project
-
-If this helps you create better AI visuals, consider starring the repo on GitHub. It helps more people find the project.
+MIT.

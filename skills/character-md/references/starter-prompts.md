@@ -35,13 +35,13 @@ Photorealistic, natural skin texture, consistent identity, no visible brands, no
 
 Wearing [smart casual outfit], relaxed but intentional fit, no visible logos.
 
-Standing at a clean but lived-in desk setup with laptop, dual monitors, headphones, coffee mug, and notebook.
+Standing at a clean but lived-in desk setup with laptop, dual monitors, headphones, coffee mug, and notebook. Keep props away from the face.
 
-50mm lens, f/3.2, side angle, environmental context visible.
+70mm lens, f/3.2, front-facing or slight three-quarter angle, waist-up framing, face large and sharp, environmental context visible but secondary.
 
 Bright productivity lighting, clean white balance, minimal shadows.
 
-Photorealistic, natural skin texture, consistent identity, lived-in environment, not a stock photo.
+Photorealistic, natural skin texture, consistent identity, lived-in environment, not a stock photo. Reject if the workspace looks good but the face no longer matches the reference photos.
 ```
 
 ---

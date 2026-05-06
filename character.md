@@ -9,7 +9,16 @@ Priority:
 - **Strict:** facial features, hair, identity, realism
 - **Flexible:** outfit, environment, composition
 
-Use this file as the source of truth for image generation. Update it as you learn what improves consistency.
+Use this file as the reusable text source of truth for image generation. If you create a Character.md identity sheet, treat the approved sheet as the visual source of truth and translate its stable face, hair, styling, and drift-prevention notes into this file.
+
+Reference priority:
+
+1. Original reference photos: identity truth
+2. Approved anchor headshot: quality and style anchor
+3. Approved multi-angle identity sheet: visual source of truth
+4. `character.md`: reusable text source of truth
+
+Style reference images may guide wardrobe, color, texture, and vibe only. They must not change the facial identity.
 
 ---
 
@@ -19,10 +28,26 @@ Photorealistic image of the same Black male, early 30s, medium-deep brown skin w
 
 ### Face
 
-- Oval face shape with a defined jawline and slightly narrow chin
+- Oval-to-slightly-long face shape with a narrower facial silhouette
+- Defined but natural jawline that tapers toward a slightly narrow chin
+- Moderate cheekbone structure, not overly broad or heavy
 - Balanced facial proportions with subtle natural asymmetry
-- Almond-shaped dark brown eyes
+- Almond-shaped dark brown eyes with a calm, slightly heavy-lidded look
+- Natural brow weight; do not raise, sharpen, or reshape the brow
+- Nose bridge and profile must remain consistent with the reference photos
+- Mouth width and lip shape must remain natural and understated
 - Neutral to focused expression: calm, composed, grounded
+
+### Facial Identity Lock
+
+Use the original reference photos as the identity truth. Use the best approved generated headshot only as a quality and style anchor.
+
+- Preserve exact face proportions from the reference photos
+- Preserve the narrower facial silhouette and natural temple recession
+- Preserve the specific eye shape, brow heaviness, nose bridge/profile, mouth width, chin taper, and beard density
+- Keep the face recognizable when cropped away from the outfit, background, and scene
+- Do not widen the face, thicken the jaw, square off the chin, fill in the hairline, over-densify the beard, smooth the skin, or recast the subject as a generic founder/model type
+- Do not make the subject younger, older, more corporate, more polished, more symmetrical, or more conventionally model-like than the reference photos
 
 ### Skin
 
@@ -49,6 +74,8 @@ Photorealistic image of the same Black male, early 30s, medium-deep brown skin w
 ### Identity Constraints
 
 - Must maintain consistent facial structure across all images
+- Original reference photos override any generated style anchor if there is a conflict
+- The approved generated headshot may guide lighting, realism, and finish, but not facial structure
 - No exaggerated expressions
 - No artificial beautification or stylization
 - No identity drift
@@ -56,19 +83,44 @@ Photorealistic image of the same Black male, early 30s, medium-deep brown skin w
 
 ---
 
-## 2. Face Lock Snippet (ALWAYS USE WHEN CONSISTENCY MATTERS)
+## 2. Facial Feature Map
+
+Use this section for the prompt-ready facial map created from uploaded reference images and the approved identity sheet.
+
+```txt
+Face shape:
+Jaw / chin:
+Eyes / brows:
+Nose:
+Mouth:
+Hair / hairline:
+Facial hair:
+Skin texture:
+Natural asymmetry:
+Drift risks:
+```
+
+Keep this anatomical and specific. Avoid generic attractiveness language. The purpose is to preserve identity across headshots, lifestyle scenes, podcast images, workspace images, and social content.
+
+---
+
+## 3. Face Lock Snippet (ALWAYS USE WHEN CONSISTENCY MATTERS)
 
 ```txt
 must maintain identical facial structure, same person across all images,
 no variation in bone structure, no reinterpretation,
-consistent face shape, jawline, eyes, and proportions
+consistent face shape, jawline, eyes, and proportions,
+preserve exact eye spacing, brow weight, nose profile, mouth width,
+chin taper, natural hairline, temple recession, and beard density,
+do not widen the face, thicken the jaw, fill in the hairline,
+over-densify the beard, smooth the skin, or recast as a generic model
 ```
 
 Use this snippet inside prompts when generating batches, changing environments, changing wardrobe, or creating lifestyle imagery.
 
 ---
 
-## 3. Body Composition
+## 4. Body Composition
 
 - Height: 6ft
 - Weight: 195lbs
@@ -85,7 +137,7 @@ Optional future additions:
 
 ---
 
-## 4. Expression System
+## 5. Expression System
 
 ### Primary
 
@@ -109,7 +161,7 @@ Optional future additions:
 
 ---
 
-## 5. Wardrobe System (FLEXIBLE — STYLE DRIVEN)
+## 6. Wardrobe System (FLEXIBLE — STYLE DRIVEN)
 
 ### Style Identity
 
@@ -166,7 +218,7 @@ Use these as style references only. Do not show visible brand logos.
 
 ---
 
-## 6. Props & Environment (FLEXIBLE — CONTEXTUAL REALISM)
+## 7. Props & Environment (FLEXIBLE — CONTEXTUAL REALISM)
 
 ### Environment Style
 
@@ -212,7 +264,7 @@ Use these as style references only. Do not show visible brand logos.
 
 ---
 
-## 7. Cultural Signal Layer
+## 8. Cultural Signal Layer
 
 ### Identity Context
 
@@ -263,8 +315,8 @@ centered composition, sharp focus on eyes, natural skin texture
 Use for website sections, blog images, café scenes, and workspace shots.
 
 ```txt
-50mm lens, f/2.8, slight 3/4 angle, medium shot,
-natural perspective, subtle background blur
+70mm lens, f/2.8, slight 3/4 angle, waist-up framing,
+face large and sharp, environment secondary, subtle background blur
 ```
 
 ### C. Cinematic / Brand
@@ -272,8 +324,8 @@ natural perspective, subtle background blur
 Use for podcast, speaking, founder-story, and campaign imagery.
 
 ```txt
-35mm lens, f/1.8, slight low angle, subject off-center,
-rule-of-thirds composition, cinematic depth of field
+70mm lens, f/2.8, eye-level or very slight low angle,
+face large and sharp, cinematic depth without obscuring identity
 ```
 
 ### D. Desk / Builder Mode
@@ -281,8 +333,8 @@ rule-of-thirds composition, cinematic depth of field
 Use for standing desk, dual monitors, laptop work, and maker scenes.
 
 ```txt
-50mm lens, f/3.2, side angle or over-the-shoulder,
-focus split between subject and environment, workspace context visible
+70mm lens, f/3.2, front-facing or slight 3/4 angle,
+face dominant, workspace context visible but secondary
 ```
 
 ---
@@ -384,9 +436,9 @@ golden tones, shallow depth of field, cozy environment lighting
 
 ### Podcast
 
-- Headphones on, side profile
-- Speaking pose with microphone
-- Cinematic low-key portrait
+- Podcast portrait with face unobstructed
+- Speaking pose with microphone low or off to the side
+- Cinematic portrait with controlled shadows
 - Desk recording setup
 
 ### Social Content
@@ -474,15 +526,15 @@ Photorealistic image of the same Black male, early 30s, medium-deep brown skin w
 
 Very short cropped hair with slight recession at temples and lower density at crown, natural hairline, short beard 3–5mm with natural density variation, slightly fuller on chin, clean neckline.
 
-Must maintain identical facial structure, same person across all images, no variation in bone structure, no reinterpretation, consistent face shape, jawline, eyes, and proportions.
+Must maintain identical facial structure, same person across all images, no variation in bone structure, no reinterpretation, consistent face shape, jawline, eyes, and proportions. Preserve exact eye spacing, brow weight, nose profile, mouth width, chin taper, natural hairline, temple recession, and beard density. Do not widen the face, thicken the jaw, fill in the hairline, over-densify the beard, smooth the skin, or recast as a generic model.
 
-Wearing a dark chore coat over a heavyweight cream t-shirt, relaxed fit, minimal styling, beanie, no visible logos.
+Wearing a dark chore coat over a heavyweight cream t-shirt, relaxed fit, minimal styling, no hat, no headphones, no visible logos.
 
-Seated in a warm, slightly busy café with natural textures, laptop open, ceramic coffee mug nearby, environment feels lived-in and not staged.
+Seated in a warm café with natural textures, laptop open, ceramic coffee mug nearby, environment feels lived-in but remains secondary to the face.
 
-50mm lens, f/2.8, 3/4 angle.
+70mm lens, f/2.8, slight 3/4 angle, waist-up framing, face large and sharp.
 
-Natural window light with warm tones and soft shadows.
+Natural window light with warm tones and soft shadows, no heavy shadows across the face.
 
-Photorealistic, consistent identity, natural skin texture, no visible brands, natural candid moment, slightly imperfect composition, lived-in environment, not a stock photo.
+Photorealistic, consistent identity, natural skin texture, no visible brands, natural candid moment, lived-in environment, not a stock photo. Reject if the face becomes broader, the jaw becomes heavier, the hairline fills in, the beard thickens, or the subject looks like a different person.
 ```

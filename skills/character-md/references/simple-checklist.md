@@ -16,19 +16,36 @@ If it fails one, refine and regenerate.
 
 ---
 
-## Beginner workflow
+## Face-first workflow
 
 ```txt
-Generate 6–8 images
+Generate 4 anchor headshots
 ↓
-Keep the 2–4 strongest
+Approve the strongest face match
 ↓
-Notice what drifted
+Generate 4 transition portraits
 ↓
-Tighten character.md
+Approve one face-stable transition
 ↓
-Regenerate
+Generate 4 single-scene lifestyle images
 ```
+
+Do not expand into podcast, stage, motion, hats, headphones, microphones, low light, or wide environmental scenes until the face passes in a transition portrait.
+
+---
+
+## Face crop check
+
+Before judging the outfit or scene, mentally crop the image to the face.
+
+Reject the image if:
+
+- The face becomes wider or heavier
+- The jaw thickens or chin shape changes
+- The hairline fills in or temples change
+- The beard becomes denser or more sculpted
+- The skin becomes overly smooth or model-like
+- The image looks polished but not recognizably like the reference photos
 
 ---
 
