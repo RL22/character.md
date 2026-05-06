@@ -4,6 +4,8 @@ A cross-agent skill kit for creating consistent photorealistic AI characters.
 
 Character.md helps an agent turn uploaded reference images into a reusable character identity, approve an anchor headshot, approve a multi-angle identity sheet, and then generate either a professional headshot or a 4-tile lifestyle image with less character drift.
 
+Project page: [sprintz.agency/projects/character.md](https://sprintz.agency/projects/character.md)
+
 The core package lives here:
 
 ```txt
