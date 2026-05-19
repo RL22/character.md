@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Character.md | Consistent AI Characters Without Drift</title>
   <meta name="description" content="Character.md is a lightweight agent skill kit for turning reference images into consistent AI character headshots and lifestyle imagery." />
+  <script>
+    const pagePath = window.location.pathname;
+    const assetBase =
+      window.location.protocol === 'file:' || pagePath.includes('/project-page/')
+        ? '../'
+        : pagePath.startsWith('/character.md/')
+          ? '/character.md/'
+          : '/';
+    document.write(`<base href="${assetBase}">`);
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
