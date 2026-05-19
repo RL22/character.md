@@ -1,1 +1,9 @@
 .DS_Store
+PRODUCT.md
+DESIGN.md
+project-page/
+.next
+node_modules
+project-pages
+*.log
+next-env.d.ts
