@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character.md | Consistent AI Characters Without Drift</title>
+  <meta name="description" content="Character.md is a lightweight agent skill kit for turning reference images into consistent AI character headshots and lifestyle imagery." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            primary: '#141413',
+            secondary: '#57514C',
+            tertiary: '#ED5724',
+            neutral: '#FFFEF8',
+            action: '#C9471B',
+            'action-hover': '#B84018',
+            'action-tint': '#FFF0E8',
+            canvas: '#F7F3EC',
+            panel: '#FFFFFF',
+            muted: '#EFE4DA',
+            dark: '#2E2A28',
+            'text-primary': '#2B2623',
+            'text-secondary': '#57514C',
+            'text-tertiary': '#7A746E',
+            'text-on-dark': '#D8D1C8',
+            border: '#EEE6DC',
+            'border-strong': '#DDC6B4',
+            'ring-hover': '#FFD4C2',
+            focus: '#1D70B8',
+            'ring-focus': '#9CC4E4',
+            error: '#B2382C',
+            'error-tint': '#E7B3AE'
+          },
+          boxShadow: {
+            whisper: '0 4px 24px rgba(20, 20, 19, 0.05)',
+            warm: '0 0 0 3px rgba(255, 212, 194, 0.55)',
+            focus: '0 0 0 3px rgba(156, 196, 228, 0.65)'
+          },
+          letterSpacing: {
+            label: '0.08em',
+            h1: '-0.03em',
+            h2: '-0.02em'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral font-sans text-text-primary antialiased">
+  <nav class="sticky top-0 z-40 border-b border-border bg-neutral/90 backdrop-blur-lg" aria-label="Primary navigation">
+    <div class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-6 px-5 lg:min-h-[72px] lg:px-8">
+      <a href="#top" class="inline-flex items-center gap-3 font-bold text-primary" aria-label="Character.md home">
+        <span class="brand-mark grid h-9 w-9 place-items-center rounded-[10px] bg-primary" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4.2" fill="#ED5724" />
+            <path d="M5.6 20.1c.75-4.2 3.1-6.3 6.4-6.3s5.65 2.1 6.4 6.3" fill="#ED5724" />
+          </svg>
+        </span>
+        <span>character.md</span>
+      </a>
+      <div class="flex items-center gap-5 text-sm text-text-secondary">
+        <a href="#workflow" class="hidden transition hover:-translate-y-0.5 hover:text-primary sm:inline-block">Workflow</a>
+        <a href="#truth" class="hidden transition hover:-translate-y-0.5 hover:text-primary sm:inline-block">Truth</a>
+        <a href="#download" class="inline-flex h-11 items-center justify-center rounded-xl bg-action px-4 font-mono text-[11px] font-bold uppercase tracking-label text-white transition hover:-translate-y-0.5 hover:bg-action-hover focus:outline-none focus:shadow-focus">Get Character.md</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="border-b border-border bg-neutral py-16 lg:py-24">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.04fr_0.96fr] lg:px-8">
+      <div>
+        <p class="mb-6 font-mono text-xs font-bold uppercase tracking-label text-action">Sprintz project | AI identity workflow</p>
+        <h1 class="max-w-4xl text-5xl font-bold uppercase leading-[0.9] tracking-h1 text-primary md:text-7xl lg:text-8xl">Create consistent AI characters without character drift.</h1>
+        <p class="mt-7 max-w-2xl text-lg text-text-secondary md:text-xl">Character.md is a lightweight agent skill kit that turns reference images into a reusable character file, anchor headshot, identity sheet, and lifestyle image set.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#download" class="inline-flex h-12 items-center justify-center rounded-xl bg-action px-5 font-mono text-xs font-bold uppercase tracking-label text-white transition hover:-translate-y-1 hover:bg-action-hover focus:outline-none focus:shadow-focus">Get Character.md</a>
+          <a href="#workflow" class="inline-flex h-12 items-center justify-center rounded-xl bg-muted px-5 font-mono text-xs font-bold uppercase tracking-label text-primary transition hover:-translate-y-1 hover:shadow-warm focus:outline-none focus:shadow-focus">See the workflow</a>
+        </div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="rounded-full border border-border bg-panel px-4 py-2 text-sm text-text-secondary">No Python setup</span>
+          <span class="rounded-full border border-border bg-panel px-4 py-2 text-sm text-text-secondary">No OpenCV</span>
+          <span class="rounded-full border border-border bg-panel px-4 py-2 text-sm text-text-secondary">No local model downloads</span>
+        </div>
+      </div>
+      <figure class="rounded-3xl border border-border bg-panel p-4 shadow-whisper transition hover:-translate-y-1 hover:shadow-warm">
+        <img src="../skills/character-md/assets/lifestyle-working.png" alt="Lifestyle image output generated from a consistent Character.md identity workflow." class="aspect-[4/3] rounded-2xl border border-border object-cover" />
+        <figcaption class="flex flex-wrap items-center justify-between gap-3 px-1 pt-4">
+          <span class="inline-flex items-center gap-2 font-semibold text-primary"><span class="h-2 w-2 rounded-full bg-tertiary"></span>Identity in context</span>
+          <span class="font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">Lifestyle output</span>
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section id="problem" class="border-b border-border bg-canvas py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-action">The problem</p>
+          <h2 class="text-4xl font-bold uppercase leading-none tracking-h2 text-primary md:text-5xl">AI image sets break when the face keeps changing.</h2>
+          <p class="mt-5 text-lg text-text-secondary">The image can look polished and still fail. Character.md treats identity as a system before the model gets creative with wardrobe, setting, and mood.</p>
+        </div>
+        <div class="mt-10 grid gap-8 xl:grid-cols-[0.78fr_1.22fr]">
+          <div class="space-y-3">
+            <article class="grid grid-cols-[3rem_1fr] gap-4 rounded-2xl border border-border bg-panel p-4 transition hover:translate-x-1 hover:border-border-strong hover:shadow-warm">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-muted font-mono text-xs font-bold text-action">01</span>
+              <div><h3 class="font-bold uppercase text-primary">Face structure drifts</h3><p class="mt-1 text-sm text-text-secondary">Jaw, cheeks, eyes, nose, and proportions slowly become a different person.</p></div>
+            </article>
+            <article class="grid grid-cols-[3rem_1fr] gap-4 rounded-2xl border border-border bg-panel p-4 transition hover:translate-x-1 hover:border-border-strong hover:shadow-warm">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-muted font-mono text-xs font-bold text-action">02</span>
+              <div><h3 class="font-bold uppercase text-primary">Hair and skin get rewritten</h3><p class="mt-1 text-sm text-text-secondary">Hairline, beard density, texture, and skin detail shift between outputs.</p></div>
+            </article>
+            <article class="grid grid-cols-[3rem_1fr] gap-4 rounded-2xl border border-border bg-panel p-4 transition hover:translate-x-1 hover:border-border-strong hover:shadow-warm">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-muted font-mono text-xs font-bold text-action">03</span>
+              <div><h3 class="font-bold uppercase text-primary">Lifestyle scenes hide identity</h3><p class="mt-1 text-sm text-text-secondary">Props, hats, wide shots, low light, and side angles make drift harder to catch.</p></div>
+            </article>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            <figure class="relative overflow-hidden rounded-3xl border border-border bg-panel shadow-whisper">
+              <img src="../skills/character-md/assets/origin-front.jpeg" alt="Front reference image used for facial identity mapping." class="aspect-[3/4] object-cover" />
+              <figcaption class="absolute bottom-4 left-4 rounded-full bg-primary/85 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-label text-white">Front reference</figcaption>
+            </figure>
+            <figure class="relative overflow-hidden rounded-3xl border border-border bg-panel shadow-whisper">
+              <img src="../skills/character-md/assets/origin-three-quarter.jpeg" alt="Three-quarter reference image used for facial identity mapping." class="aspect-[3/4] object-cover" />
+              <figcaption class="absolute bottom-4 left-4 rounded-full bg-primary/85 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-label text-white">Three-quarter</figcaption>
+            </figure>
+            <figure class="relative overflow-hidden rounded-3xl border border-border bg-panel shadow-whisper">
+              <img src="../skills/character-md/assets/origin-profile.jpeg" alt="Profile reference image used for facial identity mapping." class="aspect-[3/4] object-cover object-left" />
+              <figcaption class="absolute bottom-4 left-4 rounded-full bg-primary/85 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-label text-white">Profile</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="border-b border-white/10 bg-dark py-16 text-white lg:py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-tertiary">Approval-gated workflow</p>
+          <h2 class="text-4xl font-bold uppercase leading-none tracking-h2 text-white md:text-5xl">Build the character once. Reuse the identity everywhere.</h2>
+          <p class="mt-5 text-lg text-text-on-dark">Character.md guides the agent through reference analysis, anchor approval, drift diagnostics, identity sheet generation, and final output selection.</p>
+        </div>
+        <div class="mt-10 grid gap-4 overflow-visible sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">01</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character map-face</p><h3 class="text-xl font-bold uppercase text-white">Map facial features</h3><p class="mt-3 text-sm text-text-on-dark/75">Turn uploaded references into text-first Character DNA.</p></div></article>
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">02</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character anchor</p><h3 class="text-xl font-bold uppercase text-white">Approve the anchor</h3><p class="mt-3 text-sm text-text-on-dark/75">Generate one controlled headshot before moving into style.</p></div></article>
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">03</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character diagnose</p><h3 class="text-xl font-bold uppercase text-white">Correct drift</h3><p class="mt-3 text-sm text-text-on-dark/75">Name what drifted and regenerate with tighter constraints.</p></div></article>
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">04</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character sheet</p><h3 class="text-xl font-bold uppercase text-white">Create identity sheet</h3><p class="mt-3 text-sm text-text-on-dark/75">Build five angles with style combinations from the user direction.</p></div></article>
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">05</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character headshot</p><h3 class="text-xl font-bold uppercase text-white">Final headshot</h3><p class="mt-3 text-sm text-text-on-dark/75">Produce one polished professional portrait from the approved identity.</p></div></article>
+          <article class="flex min-h-64 flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-tertiary/60 hover:bg-white/[0.07]"><span class="grid h-10 w-10 place-items-center rounded-xl bg-tertiary/15 font-mono text-xs font-bold text-ring-hover">06</span><div><p class="mb-3 font-mono text-xs font-bold text-ring-hover">/character lifestyle</p><h3 class="text-xl font-bold uppercase text-white">Lifestyle set</h3><p class="mt-3 text-sm text-text-on-dark/75">Ask five environment questions, then generate one 4-tile lifestyle image.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="truth" class="border-b border-border bg-neutral py-16 lg:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.86fr_1.14fr] lg:items-start lg:px-8">
+        <div>
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-action">Source of truth</p>
+          <h2 class="text-4xl font-bold uppercase leading-none tracking-h2 text-primary md:text-5xl">Identity is fixed. Styling stays flexible.</h2>
+          <p class="mt-5 text-lg text-text-secondary">Hover over each source to see the corresponding visual reference used by the workflow.</p>
+          <div class="mt-7 space-y-3" id="truth-cards">
+            <button class="truth-card w-full rounded-2xl border border-border bg-panel p-4 text-left transition hover:border-border-strong hover:shadow-warm focus:outline-none focus:shadow-focus" data-image="../skills/character-md/assets/identity-sheet.png" data-caption="Original references become the visual identity baseline."><h3 class="font-bold uppercase text-primary">Reference photos</h3><p class="mt-1 text-sm text-text-secondary">Original identity truth for face shape, proportions, skin, hairline, and facial hair.</p></button>
+            <button class="truth-card w-full rounded-2xl border border-border bg-panel p-4 text-left transition hover:border-border-strong hover:shadow-warm focus:outline-none focus:shadow-focus" data-image="../skills/character-md/assets/headshot-refined.png" data-caption="The anchor proves the face is stable before lifestyle complexity."><h3 class="font-bold uppercase text-primary">Anchor headshot</h3><p class="mt-1 text-sm text-text-secondary">The quality checkpoint that proves the face is stable before adding lifestyle complexity.</p></button>
+            <button class="truth-card w-full rounded-2xl border border-border bg-panel p-4 text-left transition hover:border-border-strong hover:shadow-warm focus:outline-none focus:shadow-focus" data-image="../skills/character-md/assets/identity-sheet.png" data-caption="The approved identity sheet is the visual truth across angles."><h3 class="font-bold uppercase text-primary">Identity sheet</h3><p class="mt-1 text-sm text-text-secondary">The visual truth used to keep the same person across angles, attire, and environments.</p></button>
+            <button class="truth-card w-full rounded-2xl border border-border bg-panel p-4 text-left transition hover:border-border-strong hover:shadow-warm focus:outline-none focus:shadow-focus" data-image="../skills/character-md/assets/character-md-preview.png" data-caption="character.md stores the reusable text truth for future sessions."><h3 class="font-bold uppercase text-primary">character.md</h3><p class="mt-1 text-sm text-text-secondary">The reusable text truth that travels across agents and future image sessions.</p></button>
+          </div>
+        </div>
+        <figure class="sticky top-24 rounded-3xl border border-border bg-panel p-4 shadow-whisper">
+          <img id="truth-preview" src="../skills/character-md/assets/identity-sheet.png" alt="Source of truth preview for Character.md." class="aspect-[16/10] rounded-2xl border border-border object-cover" />
+          <figcaption id="truth-caption" class="px-1 pt-4 font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">Original references become the visual identity baseline.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="proof" class="border-b border-border bg-canvas py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-action">Visual proof path</p>
+          <h2 class="text-4xl font-bold uppercase leading-none tracking-h2 text-primary md:text-5xl">Start controlled, then add the world.</h2>
+          <p class="mt-5 text-lg text-text-secondary">The safest path is not jumping straight into a busy scene. Character.md moves from reference images to anchor, identity sheet, and then lifestyle.</p>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article class="overflow-hidden rounded-3xl border border-border bg-panel"><img src="../skills/character-md/assets/identity-sheet.png" alt="Five-panel identity sheet." class="aspect-[16/9] object-cover" /><div class="p-5"><p class="font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">01 | Identity sheet</p><h3 class="mt-2 text-xl font-bold uppercase text-primary">Visual truth</h3></div></article>
+          <article class="overflow-hidden rounded-3xl border border-border bg-panel"><img src="../skills/character-md/assets/lifestyle-speaking.png" alt="Lifestyle speaking image." class="aspect-[16/9] object-cover" /><div class="p-5"><p class="font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">02 | Authority</p><h3 class="mt-2 text-xl font-bold uppercase text-primary">Speaking setting</h3></div></article>
+          <article class="overflow-hidden rounded-3xl border border-border bg-panel"><img src="../skills/character-md/assets/lifestyle-working.png" alt="Lifestyle working image." class="aspect-[16/9] object-cover" /><div class="p-5"><p class="font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">03 | Workspace</p><h3 class="mt-2 text-xl font-bold uppercase text-primary">Technical context</h3></div></article>
+          <article class="overflow-hidden rounded-3xl border border-border bg-panel"><img src="../skills/character-md/assets/lifestyle-portrait.png" alt="Lifestyle portrait image." class="aspect-[16/9] object-cover" /><div class="p-5"><p class="font-mono text-xs font-bold uppercase tracking-label text-text-tertiary">04 | Portrait</p><h3 class="mt-2 text-xl font-bold uppercase text-primary">Final polish</h3></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="bg-dark py-16 text-white lg:py-20">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div>
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-tertiary">Download gate</p>
+          <h2 class="text-4xl font-bold uppercase leading-none tracking-h2 text-white md:text-5xl">Download the Character.md Skill Kit.</h2>
+          <p class="mt-5 text-lg text-text-on-dark">Get the guided workflow, character template, prompt references, diagnostics, and visual consistency checklists.</p>
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <span class="rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-text-on-dark">Agent skill workflow</span>
+            <span class="rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-text-on-dark">Reusable character.md template</span>
+            <span class="rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-text-on-dark">Facial feature mapping prompts</span>
+            <span class="rounded-xl border border-white/10 bg-white/[0.045] px-4 py-3 text-sm text-text-on-dark">Drift diagnostics</span>
+          </div>
+        </div>
+        <form id="download-form" class="rounded-3xl border border-white/10 bg-white/[0.045] p-6 shadow-whisper lg:p-7" data-endpoint="FORM_ENDPOINT_HERE" novalidate>
+          <p class="mb-3 font-mono text-xs font-bold uppercase tracking-label text-tertiary">Form-ready v1</p>
+          <h3 class="mb-3 text-2xl font-bold uppercase tracking-h2 text-white">Send me the skill kit</h3>
+          <p class="mb-6 text-sm text-text-on-dark/75">Drop in your email and connect the endpoint when the live download flow is ready.</p>
+          <div class="grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
+            <div><label for="first-name" class="mb-2 block font-mono text-xs font-bold uppercase tracking-label text-text-on-dark">First name</label><input id="first-name" name="firstName" autocomplete="given-name" placeholder="Rodney" class="h-12 w-full rounded-xl border border-white/15 bg-neutral px-4 text-text-primary outline-none transition placeholder:text-text-tertiary focus:border-focus focus:shadow-focus" /></div>
+            <div><label for="email" class="mb-2 block font-mono text-xs font-bold uppercase tracking-label text-text-on-dark">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required class="h-12 w-full rounded-xl border border-white/15 bg-neutral px-4 text-text-primary outline-none transition placeholder:text-text-tertiary focus:border-focus focus:shadow-focus" /></div>
+          </div>
+          <p class="mt-3 min-h-5 text-sm text-ring-hover" id="form-error" aria-live="polite"></p>
+          <button type="submit" class="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-action px-6 font-mono text-xs font-bold uppercase tracking-label text-white transition hover:bg-action-hover focus:outline-none focus:shadow-focus">Send me Character.md</button>
+          <p class="mt-4 text-sm text-text-on-dark/65">No Python, OpenCV, MediaPipe, landmark model, or local download setup required for v1.</p>
+          <p class="mt-4 rounded-xl border border-white/10 bg-white/[0.055] px-3 py-2 font-mono text-[11px] font-bold uppercase tracking-label text-text-on-dark/70">Endpoint placeholder: FORM_ENDPOINT_HERE</p>
+          <div class="mt-5 hidden rounded-xl border border-ring-hover/30 bg-action-tint/10 p-4" id="success-message" role="status" aria-live="polite"><p class="font-semibold text-white">Success state ready.</p><p class="mt-1 text-sm text-text-on-dark/70">Connect the form endpoint to deliver the download link automatically.</p></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border bg-neutral py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm text-text-tertiary sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <span>Character.md by Sprintz</span>
+      <span class="font-mono text-xs font-bold uppercase tracking-label">Skill-first | Lightweight | Identity-led</span>
+    </div>
+  </footer>
+
+  <script>
+    const preview = document.querySelector('#truth-preview');
+    const caption = document.querySelector('#truth-caption');
+    document.querySelectorAll('.truth-card').forEach((card) => {
+      const updatePreview = () => {
+        preview.src = card.dataset.image;
+        caption.textContent = card.dataset.caption;
+      };
+      card.addEventListener('mouseenter', updatePreview);
+      card.addEventListener('focus', updatePreview);
+    });
+
+    const form = document.querySelector('#download-form');
+    const email = document.querySelector('#email');
+    const firstName = document.querySelector('#first-name');
+    const error = document.querySelector('#form-error');
+    const success = document.querySelector('#success-message');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      success.classList.add('hidden');
+      error.textContent = '';
+      const value = email.value.trim();
+      if (!value) {
+        error.textContent = 'Enter an email address to unlock the download.';
+        email.focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        error.textContent = 'Use a valid email address, like you@example.com.';
+        email.focus();
+        return;
+      }
+      form.dataset.readyPayload = JSON.stringify({
+        endpoint: form.dataset.endpoint,
+        email: value,
+        firstName: firstName.value.trim()
+      });
+      success.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

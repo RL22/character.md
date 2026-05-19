@@ -1,0 +1,5 @@
+skills/character-md/assets/character-md-preview.png filter=lfs diff=lfs merge=lfs -text
+skills/character-md/assets/identity-sheet.png filter=lfs diff=lfs merge=lfs -text
+skills/character-md/assets/lifestyle-portrait.png filter=lfs diff=lfs merge=lfs -text
+skills/character-md/assets/lifestyle-speaking.png filter=lfs diff=lfs merge=lfs -text
+skills/character-md/assets/lifestyle-working.png filter=lfs diff=lfs merge=lfs -text
