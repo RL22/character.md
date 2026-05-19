@@ -1,7 +1,0 @@
-interface:
-  display_name: "Character.md"
-  short_description: "Create consistent AI character imagery"
-  default_prompt: "Use $character-md to create a consistent AI character from reference images."
-
-policy:
-  allow_implicit_invocation: true
