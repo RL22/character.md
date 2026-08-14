@@ -7,6 +7,7 @@ PRODUCT.md
 DESIGN.md
 .next
 node_modules
-project-pages
+out
+site
 *.log
 next-env.d.ts
