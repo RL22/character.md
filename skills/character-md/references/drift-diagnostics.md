@@ -2,6 +2,8 @@
 
 Use this file when images start looking inconsistent.
 
+Every fix below is a template. Replace each bracketed field with the matching line from the user's own Facial Feature Map and character file. A worked example with concrete wording is at the bottom of this file.
+
 ## Face shape drift
 
 Symptoms:
@@ -14,7 +16,7 @@ Symptoms:
 Fix:
 
 ```txt
-Reinforce: oval face shape, defined jawline, slightly narrow chin, same face proportions, no variation in bone structure.
+Reinforce: [face shape], [jaw / chin], same face proportions, no variation in bone structure.
 ```
 
 ## Hairline drift
@@ -29,7 +31,7 @@ Symptoms:
 Fix:
 
 ```txt
-Reinforce: very short cropped hair, lower density at crown, slight recession at temples, natural hairline, not artificially filled.
+Reinforce: [hair length and cut], [hair density pattern], [hairline shape and growth pattern], natural hairline, not artificially filled.
 ```
 
 ## Beard drift
@@ -44,7 +46,7 @@ Symptoms:
 Fix:
 
 ```txt
-Reinforce: short beard, 3–5mm length, natural density variation, slightly fuller on chin, clean neckline, no hyper-defined barber edges.
+Reinforce: [facial hair style and length], [density and variation], [fuller or sparser regions], [neckline and edge treatment], no hyper-defined barber edges.
 ```
 
 ## Skin drift
@@ -74,7 +76,7 @@ Symptoms:
 Fix:
 
 ```txt
-Add: lived-in environment, slightly imperfect composition, natural candid moment, workwear/streetwear influence, culturally grounded, not a stock photo.
+Add: lived-in environment, slightly imperfect composition, natural candid moment, [wardrobe influence from the Wardrobe System], culturally grounded, not a stock photo.
 ```
 
 ## Brand drift
@@ -88,5 +90,41 @@ Symptoms:
 Fix:
 
 ```txt
-Reinforce the cultural signal layer: Black tech founder from Oakland, creative and technical hybrid, hypebeast meets builder, quiet confidence, not performative.
+Reinforce the cultural signal layer: [identity context], [style identity], [energy], [visual signals].
+```
+
+---
+
+## Worked example
+
+This is one filled-in example so the pattern is clear. It is not a default character. Swap in the user's own Facial Feature Map values.
+
+Face shape drift fix:
+
+```txt
+Reinforce: oval face shape, defined jawline, slightly narrow chin, same face proportions, no variation in bone structure.
+```
+
+Hairline drift fix:
+
+```txt
+Reinforce: very short cropped hair, lower density at crown, slight recession at temples, natural hairline, not artificially filled.
+```
+
+Beard drift fix:
+
+```txt
+Reinforce: short beard, 3–5mm length, natural density variation, slightly fuller on chin, clean neckline, no hyper-defined barber edges.
+```
+
+Stock-photo drift fix:
+
+```txt
+Add: lived-in environment, slightly imperfect composition, natural candid moment, workwear/streetwear influence, culturally grounded, not a stock photo.
+```
+
+Brand drift fix:
+
+```txt
+Reinforce the cultural signal layer: tech founder from Detroit, creative and technical hybrid, hypebeast meets builder, quiet confidence, not performative.
 ```

@@ -56,4 +56,4 @@ If images feel like stock photos, add personal context:
 
 ## Stage 6: Batch refinement
 
-Generate 6–12 images, keep the strongest, and use drift notes to update `character.md`.
+Generate 6–12 images, keep the strongest, and use drift notes to update your own character file.
