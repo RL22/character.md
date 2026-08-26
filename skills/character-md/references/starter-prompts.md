@@ -1,6 +1,6 @@
 # Starter Prompts
 
-Use these prompts after filling out `character.md`.
+Use these prompts after filling out your own character file.
 
 Replace bracketed text with your details.
 

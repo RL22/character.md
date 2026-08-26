@@ -1,9 +1,13 @@
 .DS_Store
+
+# Personal character profile kept locally for testing; not part of the shipped skill
+rodney-character.md
+
 PRODUCT.md
 DESIGN.md
-project-page/
 .next
 node_modules
-project-pages
+out
+site
 *.log
 next-env.d.ts

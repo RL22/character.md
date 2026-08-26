@@ -1,6 +1,8 @@
 # Getting Started
 
-Use this guide to set up your own `character.md` file and generate consistent photorealistic AI images.
+Use this guide to set up your own character file and generate consistent photorealistic AI images.
+
+Your character file is a new file in your own working directory — `character.md` in your project is the usual name. Never edit a bundled template or example inside the skill package; copy the structure out and fill it in your own copy.
 
 You do not need to be technical. The workflow is:
 
@@ -27,7 +29,7 @@ The agent will guide you through:
 3. Generating and approving an anchor headshot.
 4. Choosing attire and style direction.
 5. Generating and approving a 5-panel identity sheet.
-6. Translating the approved identity sheet into `character.md`.
+6. Translating the approved identity sheet into your own character file.
 7. Creating one professional headshot or one 4-tile lifestyle image.
 
 If the anchor or identity sheet does not look right, reject it. The agent should run drift diagnostics, explain what changed, and regenerate with stronger identity constraints.
@@ -136,7 +138,7 @@ If the sheet fails, reject it. The agent should diagnose which panel drifted and
 
 ## Step 5: Fill out strict Character DNA
 
-Open `character.md` and update the strict identity sections:
+Create your own character file in your working directory (for example `character.md` in your project), then fill in the strict identity sections:
 
 - Face shape
 - Jawline
@@ -151,7 +153,7 @@ Open `character.md` and update the strict identity sections:
 
 Be specific, but natural.
 
-Example:
+Example, not a default:
 
 ```txt
 Oval-to-slightly-long face shape with a defined jawline and slightly narrow chin taper.
@@ -160,7 +162,9 @@ Very short cropped hair, slight recession at temples, natural hairline.
 Short beard, 3–5mm length, with natural density variation.
 ```
 
-If you used the skill workflow, translate the approved identity sheet into this section. The identity sheet is the visual source of truth; `character.md` is the reusable text source of truth.
+If you used the skill workflow, translate the approved identity sheet into this section. The identity sheet is the visual source of truth; your character file is the reusable text source of truth.
+
+The example above is one filled-in character, not a default. More filled-in examples live in the "Worked example" blocks in `prompt-assembly.md`, `identity-ladder-prompts.md`, `lifestyle-prompts.md`, and `drift-diagnostics.md`.
 
 ---
 
@@ -194,13 +198,13 @@ Add:
 - Posture
 - Movement style
 
-Example:
+Example format, not a default:
 
 ```txt
-Height: 6ft
-Weight: 195lbs
-Build: athletic lean
-Posture: upright, relaxed shoulders, grounded stance
+Height: [e.g. 5ft 9in]
+Weight: [e.g. 165lbs]
+Build: [e.g. athletic lean]
+Posture: [e.g. upright, relaxed shoulders, grounded stance]
 ```
 
 ---
@@ -217,7 +221,7 @@ Add:
 - Style references
 - Things to avoid
 
-Example:
+Example, not a default:
 
 ```txt
 Tech founder with streetwear and workwear influence.
@@ -267,7 +271,7 @@ Ask three questions:
 
 If yes, keep it.
 
-If no, refine `character.md` and regenerate.
+If no, refine your character file and regenerate.
 
 ---
 

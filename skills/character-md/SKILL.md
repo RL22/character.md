@@ -28,6 +28,14 @@ Load these only when needed:
 
 Use `assets/` only as visual examples or reference assets. Do not treat bundled asset subjects as the default character.
 
+Several references end with a "Worked example" block showing a fully filled-in prompt or character file. Use those blocks when the user asks what a completed example looks like. Everything outside those blocks is a template with bracketed fields to fill from the user's own reference images.
+
+## Output Location
+
+Write the user's character file into the user's own working directory, or to a path the user specifies. Default to `character.md` in the user's current project directory, and confirm the path before writing if a file already exists there.
+
+Never modify this skill package. Do not write to, overwrite, or copy from any file under the skill directory, including any bundled template, reference, example, or asset. Those are read-only instructional material.
+
 ## Command Menu
 
 Use these commands as workflow names. If the user asks naturally, map the request to the closest command.
@@ -45,7 +53,7 @@ Use these commands as workflow names. If the user asks naturally, map the reques
 - The uploaded identity reference images are the original identity truth.
 - The approved anchor headshot is the controlled quality anchor.
 - The approved multi-angle identity sheet is the visual source of truth.
-- `character.md` is the reusable text source of truth.
+- The character file you write for the user is the reusable text source of truth.
 - Style references affect attire, palette, texture, and vibe only. They must never override facial identity.
 
 ## Full Create Workflow
@@ -64,7 +72,7 @@ Use these commands as workflow names. If the user asks naturally, map the reques
 7. Generate a 5-panel identity sheet with five distinct style combinations.
 8. Ask the user to approve or reject the identity sheet.
 9. If rejected, run `/character diagnose`, identify which panel or traits drifted, revise the prompt, and regenerate the sheet.
-10. After identity sheet approval, translate the visual identity into `character.md`.
+10. After identity sheet approval, translate the visual identity into a new character file in the user's working directory (see "Output Location").
 11. Ask whether the user wants a professional headshot or lifestyle photography.
 12. Generate the selected final output.
 
@@ -176,7 +184,7 @@ Generate exactly one final professional headshot unless the user asks for a batc
 Use:
 
 - approved identity sheet as visual truth
-- `character.md` as text truth
+- the user's character file as text truth
 - professional but natural styling
 - face large enough to verify identity
 - no identity-blocking props
@@ -230,7 +238,7 @@ Common drift categories:
 
 ## Character.md Translation
 
-After identity sheet approval, write or revise `character.md` with:
+After identity sheet approval, write or revise the user's own character file — a new file in the user's working directory, or at a path the user specifies. Never write over a bundled template or example inside this skill package. Include:
 
 - Character DNA
 - Facial Identity Lock
